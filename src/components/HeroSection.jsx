@@ -3,6 +3,13 @@ import styled from "styled-components";
 import color from "../utils/Colors";
 import Button from "./elements/Button/Index";
 
+const options = [
+  { title: "Rogojampi", selected: "Rogojampi" },
+  { title: "Banyuwangi", selected: "Banyuwangi" },
+  { title: "Genteng", selected: "Genteng" },
+  { title: "Srono", selected: "Srono" },
+];
+
 export default function HeroSection() {
   const Section = styled.section`
     padding: 72px 0px;
@@ -75,10 +82,9 @@ export default function HeroSection() {
         <Wrapper>
           <FilterDropdown>
             <option selected>Pilih Lokasimu</option>
-            <option value="">Rogojampi</option>
-            <option value="">Banyuwangi</option>
-            <option value="">Genteng</option>
-            <option value="">Srono</option>
+            {options.map((option) => (
+              <option value={option.selected}>{option.title}</option>
+            ))}
           </FilterDropdown>
           <Searching type="text" placeholder="Cari makanan" />
         </Wrapper>

@@ -17,6 +17,24 @@ const service = [
   { title: "Iklan", navigation: "" },
 ];
 
+const socialMedia = [
+  {
+    title: "contact@gmail.com",
+    navigate: "gmail.com",
+    icon: <i class="fa-solid fa-envelope" aria-hidden="true"></i>,
+  },
+  {
+    title: "Instagram",
+    navigate: "instagram.com",
+    icon: <i class="fa-brands fa-instagram"></i>,
+  },
+  {
+    title: "Tiktok",
+    navigate: "tiktok.com",
+    icon: <i class="fa-brands fa-tiktok"></i>,
+  },
+];
+
 export default function Footer() {
   const Footer = styled.footer`
     background-color: ${color.light};
@@ -50,6 +68,9 @@ export default function Footer() {
   const NavigationTitle = styled(Link)`
     text-decoration: none;
     color: ${color.gray};
+    display: flex;
+    gap: 8px;
+    align-items: center;
     font-size: 16px;
     font-weight: 400;
   `;
@@ -96,28 +117,18 @@ export default function Footer() {
             ))}
           </NavigationWrapper>
         </div>
-        <div class="page-footer-kontakami">
-          <h1 class="h1-judul">Kontak Kami</h1>
-          <div class="footer-link">
-            <div>
-              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-              <a href="https://www.gmail.com" target="_blank">
-                <strong>contact@gmail.com</strong>
-              </a>
-            </div>
-            <div>
-              <i class="fa-brands fa-instagram"></i>
-              <a href="https://www.instagram-account.com" target="_blank">
-                <strong>@instagram-account</strong>
-              </a>
-            </div>
-            <div>
-              <i class="fa-brands fa-tiktok"></i>
-              <a href="https://www.tiktok_account.com" target="_blank">
-                <strong>@tiktok_account</strong>
-              </a>
-            </div>
-          </div>
+        <div>
+          <Title>Kontak Kami</Title>
+          <NavigationWrapper>
+            {socialMedia.map((item) => (
+              <div key={item.title}>
+                <NavigationTitle to={item.navigate} target="_blank">
+                  {item.icon}
+                  {item.title}
+                </NavigationTitle>
+              </div>
+            ))}
+          </NavigationWrapper>
         </div>
       </ContentWrapper>
       <FooterBottom>

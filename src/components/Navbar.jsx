@@ -9,6 +9,13 @@ const Logo = {
   alt: "Logo",
 };
 
+const navigation = [
+  { title: "Home", navigate: "/" },
+  { title: "About us", navigate: "/about" },
+  { title: "Blog", navigate: "/blog" },
+  { title: "Contact", navigate: "/contact" },
+];
+
 export default function Navbar() {
   const Nav = styled.nav`
     padding: 15px 0px;
@@ -42,10 +49,11 @@ export default function Navbar() {
           <img src={Logo.src} alt={Logo.alt} />
         </Link>
         <NavLink>
-          <NavLinkItem to="/">Home</NavLinkItem>
-          <NavLinkItem to="/about">About us</NavLinkItem>
-          <NavLinkItem to="/blog">Blog</NavLinkItem>
-          <NavLinkItem to="/contact">Contact</NavLinkItem>
+          {navigation.map((item, index) => (
+            <NavLinkItem to={item.navigate} key={index}>
+              {item.title}
+            </NavLinkItem>
+          ))}
         </NavLink>
       </Container>
     </Nav>
