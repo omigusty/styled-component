@@ -11,11 +11,18 @@ export default function ProductSection() {
     @media screen and (max-width: 640px) {
       padding: 36px 0px;
     }
+    @media screen and (max-width: 768px) and (min-width: 640px) {
+      padding: 36px 0px;
+    }
   `;
   const Container = styled.div`
     max-width: 1140px;
     margin: auto;
     @media screen and (max-width: 640px) {
+      max-width: 100%;
+      padding: 0px 24px;
+    }
+    @media screen and (max-width: 768px) and (min-width: 640px) {
       max-width: 100%;
       padding: 0px 24px;
     }
@@ -53,6 +60,10 @@ export default function ProductSection() {
     gap: 30px;
     @media screen and (max-width: 640px) {
       grid-template-columns: repeat(1, 1fr);
+      gap: 16px;
+    }
+    @media screen and (max-width: 768px) and (min-width: 640px) {
+      grid-template-columns: repeat(2, 1fr);
       gap: 16px;
     }
   `;

@@ -37,13 +37,21 @@ const socialMedia = [
 
 export default function Footer() {
   const Footer = styled.footer`
-    background-color: ${color.light};
+    padding: 72px 0px 22px 0px;
+    @media screen and (max-width: 640px) {
+      padding: 36px 0px 16px 0px;
+    }
+    @media screen and (max-width: 768px) and (min-width: 640px) {
+      padding: 36px 0px 16px 0px;
+    }
+  `;
+  const Container = styled.div`
+    max-width: 1140px;
+    margin: auto;
     display: flex;
     flex-direction: column;
-    padding: 72px 150px 22px 150px;
     gap: 52px;
     @media screen and (max-width: 640px) {
-      padding: 36px 16px 22px 24px;
       gap: 32px;
     }
   `;
@@ -54,12 +62,21 @@ export default function Footer() {
       flex-direction: column;
       gap: 20px;
     }
+    @media screen and (max-width: 768px) and (min-width: 640px) {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      align-items: center;
+      justify-content: center;
+    }
   `;
   const Description = styled.p`
     color: ${color.gray};
     font-size: 16px;
     margin-top: 8px;
     max-width: 263px;
+    @media screen and (max-width: 768px) and (min-width: 640px) {
+      max-width: 100%;
+    }
   `;
   const Title = styled.h5`
     color: ${color.dark};
@@ -91,57 +108,59 @@ export default function Footer() {
 
   return (
     <Footer>
-      <ContentWrapper>
-        <div>
-          <Link to="/">
-            <img src={logo} alt="" />
-          </Link>
-          <Description>
-            Jelajahi Rasa Autentik Banyuwangi Kuliner Terfavorit menyapa di
-            setiap Gigitan
-          </Description>
-        </div>
-        <div>
-          <Title>Jelajahi</Title>
-          <NavigationWrapper>
-            {explore.map((item) => (
-              <Navigation key={item.title}>
-                <NavigationTitle to={item.navigation}>
-                  {item.title}
-                </NavigationTitle>
-              </Navigation>
-            ))}
-          </NavigationWrapper>
-        </div>
-        <div>
-          <Title>Layanan</Title>
-          <NavigationWrapper>
-            {service.map((item) => (
-              <Navigation key={item.title}>
-                <NavigationTitle to={item.navigation}>
-                  {item.title}
-                </NavigationTitle>
-              </Navigation>
-            ))}
-          </NavigationWrapper>
-        </div>
-        <div>
-          <Title>Kontak Kami</Title>
-          <NavigationWrapper>
-            {socialMedia.map((item) => (
-              <div key={item.title}>
-                <NavigationTitle to={item.navigate} target="_blank">
-                  {item.icon}
-                  {item.title}
-                </NavigationTitle>
-              </div>
-            ))}
-          </NavigationWrapper>
-        </div>
-      </ContentWrapper>
-      <FooterBottom>
-        © Copyright 2023 Logoipsum • All Right Reserved
-      </FooterBottom>
+      <Container>
+        <ContentWrapper>
+          <div>
+            <Link to="/">
+              <img src={logo} alt="" />
+            </Link>
+            <Description>
+              Jelajahi Rasa Autentik Banyuwangi Kuliner Terfavorit menyapa di
+              setiap Gigitan
+            </Description>
+          </div>
+          <div>
+            <Title>Jelajahi</Title>
+            <NavigationWrapper>
+              {explore.map((item) => (
+                <Navigation key={item.title}>
+                  <NavigationTitle to={item.navigation}>
+                    {item.title}
+                  </NavigationTitle>
+                </Navigation>
+              ))}
+            </NavigationWrapper>
+          </div>
+          <div>
+            <Title>Layanan</Title>
+            <NavigationWrapper>
+              {service.map((item) => (
+                <Navigation key={item.title}>
+                  <NavigationTitle to={item.navigation}>
+                    {item.title}
+                  </NavigationTitle>
+                </Navigation>
+              ))}
+            </NavigationWrapper>
+          </div>
+          <div>
+            <Title>Kontak Kami</Title>
+            <NavigationWrapper>
+              {socialMedia.map((item) => (
+                <div key={item.title}>
+                  <NavigationTitle to={item.navigate} target="_blank">
+                    {item.icon}
+                    {item.title}
+                  </NavigationTitle>
+                </div>
+              ))}
+            </NavigationWrapper>
+          </div>
+        </ContentWrapper>
+        <FooterBottom>
+          © Copyright 2023 Logoipsum • All Right Reserved
+        </FooterBottom>
+      </Container>
     </Footer>
   );
 }

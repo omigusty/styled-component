@@ -30,11 +30,18 @@ export default function AboutSection() {
     @media screen and (max-width: 640px) {
       padding: 36px 0px;
     }
+    @media screen and (max-width: 768px) and (min-width: 640px) {
+      padding: 36px 0px;
+    }
   `;
   const Container = styled.div`
     max-width: 1140px;
     margin: auto;
     @media screen and (max-width: 640px) {
+      max-width: 100%;
+      padding: 0px 24px;
+    }
+    @media screen and (max-width: 768px) and (min-width: 640px) {
       max-width: 100%;
       padding: 0px 24px;
     }
@@ -46,6 +53,9 @@ export default function AboutSection() {
     @media screen and (max-width: 640px) {
       display: block;
     }
+    @media screen and (max-width: 768px) and (min-width: 640px) {
+      display: block;
+    }
   `;
   const Col = styled.div`
     display: flex;
@@ -53,8 +63,12 @@ export default function AboutSection() {
     justify-content: center;
   `;
   const HeroImage = styled.img`
-    max-width: 555px;
+    max-width: 100%;
     @media screen and (max-width: 640px) {
+      max-width: 100%;
+      display: none;
+    }
+    @media screen and (max-width: 768px) and (min-width: 640px) {
       max-width: 100%;
       display: none;
     }

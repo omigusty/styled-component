@@ -15,11 +15,18 @@ export default function StatsSection() {
     @media screen and (max-width: 640px) {
       padding: 36px 0px;
     }
+    @media screen and (max-width: 768px) and (min-width: 640px) {
+      padding: 36px 0px;
+    }
   `;
   const Container = styled.div`
     max-width: 1140px;
     margin: auto;
     @media screen and (max-width: 640px) {
+      max-width: 100%;
+      padding: 0px 24px;
+    }
+    @media screen and (max-width: 768px) and (min-width: 640px) {
       max-width: 100%;
       padding: 0px 24px;
     }
