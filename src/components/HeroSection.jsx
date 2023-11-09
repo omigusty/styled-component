@@ -14,6 +14,9 @@ export default function HeroSection() {
   const Section = styled.section`
     padding: 72px 0px;
     background-color: ${color.light};
+    @media screen and (max-width: 640px) {
+      padding: 36px 0px;
+    }
   `;
   const Container = styled.div`
     max-width: 1140px;
@@ -21,26 +24,45 @@ export default function HeroSection() {
     display: flex;
     align-items: center;
     flex-direction: column;
+    @media screen and (max-width: 640px) {
+      max-width: 100%;
+      padding: 0px 24px;
+    }
   `;
   const Header = styled.header`
     margin-bottom: 52px;
+    @media screen and (max-width: 640px) {
+      margin-bottom: 32px;
+    }
   `;
   const Heading = styled.h1`
     margin-bottom: 4px;
     color: ${color.dark};
     font-size: 42px;
     font-weight: 500;
+    text-align: center;
+    @media screen and (max-width: 640px) {
+      font-size: 36px;
+    }
   `;
   const SubHeading = styled.p`
     font-size: 20px;
     color: ${color.gray};
     max-width: 728px;
     text-align: center;
+    @media screen and (max-width: 640px) {
+      font-size: 18px;
+    }
   `;
   const Wrapper = styled.div`
     margin-top: 52px;
     display: flex;
     gap: 12px;
+    @media screen and (max-width: 640px) {
+      margin-top: 32px;
+      flex-direction: column;
+      gap: 8px;
+    }
   `;
   const FilterDropdown = styled.select`
     padding: 12px 22px;
@@ -53,6 +75,9 @@ export default function HeroSection() {
     background-color: ${color.white};
     &:focus {
       outline: none;
+    }
+    @media screen and (max-width: 640px) {
+      width: 100%;
     }
   `;
   const Searching = styled.input`

@@ -18,8 +18,6 @@ export default function Button({ type, title }) {
     background-color: transparent;
     border: none;
     color: ${color.primary};
-    padding: 12px 22px;
-    border-radius: 28px;
     font-size: 18px;
     font-weight: 500;
     text-decoration: none;

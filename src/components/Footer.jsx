@@ -42,10 +42,18 @@ export default function Footer() {
     flex-direction: column;
     padding: 72px 150px 22px 150px;
     gap: 52px;
+    @media screen and (max-width: 640px) {
+      padding: 36px 16px 22px 24px;
+      gap: 32px;
+    }
   `;
   const ContentWrapper = styled.section`
     display: flex;
     justify-content: space-between;
+    @media screen and (max-width: 640px) {
+      flex-direction: column;
+      gap: 20px;
+    }
   `;
   const Description = styled.p`
     color: ${color.gray};

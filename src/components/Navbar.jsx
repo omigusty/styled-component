@@ -20,6 +20,9 @@ export default function Navbar() {
   const Nav = styled.nav`
     padding: 15px 0px;
     background-color: ${color.light};
+    @media screen and (max-width: 640px) {
+      padding: 12px 0px;
+    }
   `;
   const Container = styled.div`
     display: flex;
@@ -27,10 +30,22 @@ export default function Navbar() {
     align-items: center;
     max-width: 1140px;
     margin: auto;
+    @media screen and (max-width: 640px) {
+      max-width: 100%;
+      padding: 0px 24px;
+    }
+  `;
+  const Brand = styled.img`
+    @media screen and (max-width: 640px) {
+      width: 120px;
+    }
   `;
   const NavLink = styled.div`
     display: flex;
     gap: 28px;
+    @media screen and (max-width: 640px) {
+      gap: 12px;
+    }
   `;
   const NavLinkItem = styled(BaseNavLink)`
     text-decoration: none;
@@ -40,13 +55,16 @@ export default function Navbar() {
     &.active {
       color: ${color.primary};
     }
+    @media screen and (max-width: 640px) {
+      font-size: 12px;
+    }
   `;
 
   return (
     <Nav>
       <Container>
         <Link to="/">
-          <img src={Logo.src} alt={Logo.alt} />
+          <Brand src={Logo.src} alt={Logo.alt} />
         </Link>
         <NavLink>
           {navigation.map((item, index) => (

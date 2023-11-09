@@ -13,6 +13,11 @@ export default function CardFeature({ title, desc }) {
     align-self: stretch;
     background-color: ${color.light};
     border-radius: 12px;
+    @media screen and (max-width: 640px) {
+      flex-direction: column;
+      align-items: start;
+      gap: 8px;
+    }
   `;
   return (
     <Container>

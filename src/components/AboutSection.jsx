@@ -27,15 +27,25 @@ const features = [
 export default function AboutSection() {
   const Section = styled.section`
     padding: 72px 0px;
+    @media screen and (max-width: 640px) {
+      padding: 36px 0px;
+    }
   `;
   const Container = styled.div`
     max-width: 1140px;
     margin: auto;
+    @media screen and (max-width: 640px) {
+      max-width: 100%;
+      padding: 0px 24px;
+    }
   `;
   const Row = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 48px;
+    @media screen and (max-width: 640px) {
+      display: block;
+    }
   `;
   const Col = styled.div`
     display: flex;
@@ -44,29 +54,46 @@ export default function AboutSection() {
   `;
   const HeroImage = styled.img`
     max-width: 555px;
+    @media screen and (max-width: 640px) {
+      max-width: 100%;
+      display: none;
+    }
   `;
   const Title = styled.h6`
     color: ${color.primary};
     font-size: 22px;
     font-weight: 500;
     margin-bottom: 8px;
+    @media screen and (max-width: 640px) {
+      font-size: 18px;
+    }
   `;
   const Heading = styled.h1`
     color: ${color.dark};
     font-size: 32px;
     font-weight: 500;
     max-width: 485px;
+    @media screen and (max-width: 640px) {
+      font-size: 28px;
+      max-width: 100%;
+    }
   `;
   const SubHeading = styled.p`
     color: ${color.gray};
     font-size: 18px;
     font-weight: 400;
+    @media screen and (max-width: 640px) {
+      font-size: 16px;
+    }
   `;
   const CardWrapper = styled.div`
     display: flex;
     gap: 12px;
     flex-direction: column;
     margin-top: 36px;
+    @media screen and (max-width: 640px) {
+      margin-top: 24px;
+    }
   `;
 
   return (
